@@ -98,7 +98,7 @@ class ZipFileExtended(ZipFile):
     def _removecheck(self):
         """Check for errors before writing a file to the archive."""
         if self.mode not in ('w', 'x', 'a'):
-            raise RuntimeError("rename() requires mode 'w', 'x', or 'a'")
+            raise RuntimeError("remove() requires mode 'w', 'x', or 'a'")
         if not self.fp:
             raise RuntimeError(
                 "Attempt to modify ZIP archive that was already closed")
