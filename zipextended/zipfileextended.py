@@ -37,6 +37,12 @@ class ZipFileExtended(ZipFile):
         self.requires_commit = False
         self.removed_filelist = []
 
+   def __enter___(self):
+       return self
+
+   def __exit__(self):
+       self.close()
+
     def _hidden_files(self):
         """Find any files that are hidden between memebers of this archive"""
         # Establish the file boundaries, start - end, for each file
